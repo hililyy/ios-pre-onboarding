@@ -1,24 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageDownloadProgram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AGW-dQ-Qpn">
+                                <rect key="frame" x="0.0" y="59" width="393" height="611"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="115" id="ETV-de-e7C" customClass="ImageLoadCell" customModule="ImageDownloadProgram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ETV-de-e7C" id="39D-Se-wPu">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kjw-7R-eC0">
+                                                    <rect key="frame" x="20" y="12.666666666666664" width="353" height="90"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="F6k-si-v8e">
+                                                            <rect key="frame" x="0.0" y="1.6666666666666643" width="90" height="87"/>
+                                                            <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="90" id="MHg-hF-Rmv"/>
+                                                                <constraint firstAttribute="height" constant="90" id="ptk-XD-EHi"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Hw-UW-yGo">
+                                                            <rect key="frame" x="100" y="43" width="150" height="4"/>
+                                                        </progressView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y5P-HV-dhu">
+                                                            <rect key="frame" x="260" y="27.666666666666675" width="93" height="34.333333333333343"/>
+                                                            <color key="tintColor" red="0.089196793735027313" green="0.10308993607759476" blue="0.42714434862136841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="filled" title="Button">
+                                                                <color key="baseBackgroundColor" red="0.089196793735027313" green="0.10308993607759476" blue="0.42714434862136841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="touchLoadBtn:" destination="ETV-de-e7C" eventType="touchUpInside" id="zfW-s3-cAM"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="tintColor" systemColor="systemTealColor"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kjw-7R-eC0" firstAttribute="centerY" secondItem="39D-Se-wPu" secondAttribute="centerY" id="5bv-s7-kia"/>
+                                                <constraint firstItem="kjw-7R-eC0" firstAttribute="leading" secondItem="39D-Se-wPu" secondAttribute="leading" constant="20" id="cN0-XH-ywJ"/>
+                                                <constraint firstItem="kjw-7R-eC0" firstAttribute="centerX" secondItem="39D-Se-wPu" secondAttribute="centerX" id="rM9-Db-eU2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="loadBtn" destination="y5P-HV-dhu" id="bRn-Sx-ahZ"/>
+                                            <outlet property="photo" destination="F6k-si-v8e" id="KNy-Go-Rof"/>
+                                            <outlet property="progressView" destination="5Hw-UW-yGo" id="9jT-J4-y9p"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="sLJ-en-RK4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MEB-Yc-atY"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsg-2P-0hK">
+                                <rect key="frame" x="30" y="690" width="333" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="buF-JV-gmJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Load All Image">
+                                    <color key="baseBackgroundColor" red="0.089196793735027313" green="0.10308993607759476" blue="0.42714434862136841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qsg-2P-0hK" secondAttribute="trailing" constant="30" id="CHG-4o-Kj4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AGW-dQ-Qpn" secondAttribute="trailing" id="Nan-ll-pNX"/>
+                            <constraint firstItem="AGW-dQ-Qpn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ov9-NE-WUV"/>
+                            <constraint firstItem="Qsg-2P-0hK" firstAttribute="top" secondItem="AGW-dQ-Qpn" secondAttribute="bottom" constant="20" id="VOD-wK-WpM"/>
+                            <constraint firstItem="Qsg-2P-0hK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Xxj-ze-qLV"/>
+                            <constraint firstItem="AGW-dQ-Qpn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bJg-mY-3Yt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qsg-2P-0hK" secondAttribute="bottom" constant="78" id="r7K-q5-8uQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allLoadBtn" destination="Qsg-2P-0hK" id="Cdm-Nt-5N8"/>
+                        <outlet property="tableView" destination="AGW-dQ-Qpn" id="zC0-5J-z1h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
