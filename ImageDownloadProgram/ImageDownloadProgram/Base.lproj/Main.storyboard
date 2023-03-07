@@ -83,6 +83,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Load All Image">
                                     <color key="baseBackgroundColor" red="0.089196793735027313" green="0.10308993607759476" blue="0.42714434862136841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="touchAllLoadBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z06-8H-TgM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

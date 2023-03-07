@@ -10,9 +10,13 @@ import UIKit
 final class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var allLoadBtn: UIButton!
-    
+    var isAll: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    @IBAction func touchAllLoadBtn(_ sender: UIButton) {
+        isAll = true
+        tableView.reloadData()
     }
 }
 
@@ -24,6 +28,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ImageLoadCell else { return UITableViewCell() }
         cell.loadBtn.tag = indexPath.row
+        if self.isAll {
+            cell.loadImage()
+        }
         return cell
     }
     
