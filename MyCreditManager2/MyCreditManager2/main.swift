@@ -18,10 +18,9 @@ func selectMenu() {
     
     switch selectedNum {
     case .addStudent:
-        print(#function)
         addStudent()
     case .deleteStudent:
-        print("2")
+        deleteStudent()
     case .addGrade:
         print("3")
     case .deleteGrade:
@@ -50,6 +49,23 @@ func addStudent() {
     } else {
         print(MessageString.shared.inputError)
     }
+}
+
+func deleteStudent() {
+    print(MessageString.shared.deleteStudet)
+    guard let studentName = readLine() else { return }
+    
+    if studentName != "" {
+        if let _ = student[studentName] {
+            student[studentName] = nil
+            print("\(studentName) 학생을 삭제하였습니다.")
+        } else {
+            print("\(studentName) 학생을 찾지 못했습니다.")
+        }
+    } else {
+        print(MessageString.shared.inputError)
+    }
+    
 }
 
 while(true) {

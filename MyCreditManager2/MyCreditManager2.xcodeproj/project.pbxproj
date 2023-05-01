@@ -11,6 +11,7 @@
 		2A3273B029FE44E300E2B604 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3273AF29FE44E300E2B604 /* Enum.swift */; };
 		2A3273B229FE4A2800E2B604 /* MessageString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3273B129FE4A2800E2B604 /* MessageString.swift */; };
 		2A3273B429FE4FE200E2B604 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3273B329FE4FE200E2B604 /* StudentModel.swift */; };
+		2A3273B629FF4E4200E2B604 /* StudentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3273B529FF4E4200E2B604 /* StudentProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		2A3273AF29FE44E300E2B604 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		2A3273B129FE4A2800E2B604 /* MessageString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageString.swift; sourceTree = "<group>"; };
 		2A3273B329FE4FE200E2B604 /* StudentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		2A3273B529FF4E4200E2B604 /* StudentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				2A3273AF29FE44E300E2B604 /* Enum.swift */,
 				2A3273B129FE4A2800E2B604 /* MessageString.swift */,
 				2A3273B329FE4FE200E2B604 /* StudentModel.swift */,
+				2A3273B529FF4E4200E2B604 /* StudentProtocol.swift */,
 			);
 			path = MyCreditManager2;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A3273B029FE44E300E2B604 /* Enum.swift in Sources */,
+				2A3273B629FF4E4200E2B604 /* StudentProtocol.swift in Sources */,
 				2A3273B429FE4FE200E2B604 /* StudentModel.swift in Sources */,
 				2A3273A929FE449A00E2B604 /* main.swift in Sources */,
 				2A3273B229FE4A2800E2B604 /* MessageString.swift in Sources */,

@@ -19,4 +19,5 @@ struct MessageString {
     
     let addStudent = "추가할 학생의 이름을 입력해주세요"
     let inputError = "입력이 잘못되었습니다. 다시 확인해주세요."
+    let deleteStudet = "삭제할 삭생의 이름을 입력해주세요."
 }
