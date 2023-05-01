@@ -22,7 +22,7 @@ func selectMenu() {
     case .deleteStudent:
         deleteStudent()
     case .addGrade:
-        print("3")
+        addGrade()
     case .deleteGrade:
         print("4")
     case .showScore:
@@ -65,7 +65,29 @@ func deleteStudent() {
     } else {
         print(MessageString.shared.inputError)
     }
+}
+
+func addGrade() {
+    print(MessageString.shared.addGrade)
+    guard let gradeInfo = readLine() else { return }
+    let gradeInfoArr = gradeInfo.components(separatedBy: " ")
     
+    switch gradeInfoArr.count {
+    case 0:
+        print(MessageString.shared.inputError)
+    case 3:
+        if var _ = student[gradeInfoArr.first!] {
+            if let index = student[gradeInfoArr.first!]?.firstIndex(where: { $0.subject == gradeInfoArr[1] }) {
+                student[gradeInfoArr.first!]?[index] = Grade(subject: gradeInfoArr[1], grade: gradeInfoArr[2])
+            } else {
+                student[gradeInfoArr.first!]?.append(Grade(subject: gradeInfoArr[1], grade: gradeInfoArr[2]))
+            }
+        } else {
+            print(MessageString.shared.notExistStudent)
+        }
+    default:
+        print(MessageString.shared.inputError)
+    }
 }
 
 while(true) {
