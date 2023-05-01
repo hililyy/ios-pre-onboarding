@@ -26,5 +26,8 @@ struct MessageString {
                 만약에 학생의 성적 중 해당 과목이 존재하면 기존 점수가 갱신됩니다.
                 """
     let notExistStudent = "해당 학생이 존재하지 않습니다. 다시 확인해주세요."
-    
+    let deleteGrade = """
+                성적을 삭제할 학생의 이름, 과목 이름을 띄어쓰기로 구분하여 차례로 작성해주세요.
+                입력예) Mickey Swift
+                """
 }
