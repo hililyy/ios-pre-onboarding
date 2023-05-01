@@ -26,9 +26,8 @@ func selectMenu() {
     case .deleteGrade:
         deleteGrade()
     case .showScore:
-        print("5")
+        showScore()
     case .exit:
-        print("X")
         exit(0)
     default:
         print("뭔가 입력이 잘못되었습니다. 1~5 사이의 숫자 혹은 X를 입력해주세요.")
@@ -110,6 +109,34 @@ func deleteGrade() {
         print(MessageString.shared.inputError)
     }
 }
+
+func showScore() {
+    print(MessageString.shared.showScore)
+    guard let studentName = readLine() else { return }
+    
+    if studentName != "" {
+        if let scores = student[studentName] {
+            
+            for score in scores {
+                print("\(score.subject): \(score.grade)")
+            }
+            let average: Double = (student[studentName]?
+                .map { Double($0.grade) ?? 0 }
+                .reduce(0, +) ?? 0) / Double(scores.count)
+            
+            print("평점: \(average)")
+        } else {
+            print("\(studentName) 학생을 찾지 못했습니다.")
+        }
+    } else {
+        print(MessageString.shared.inputError)
+    }
+}
+          
+          let array = [1, 2, 3, 4, 5]
+          let sum = array.reduce(0, +) // 배열의 합 계산
+          let count = array.count // 배열의 요소 개수
+          let average = Double(sum) / Double(count) // 평균 계산
 
 while(true) {
     showMenu()
