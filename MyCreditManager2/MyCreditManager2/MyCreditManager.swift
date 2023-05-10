@@ -7,12 +7,12 @@
 
 import Foundation
 
-class MyCreditManager {
+final class MyCreditManager {
     
     static let shared = MyCreditManager()
     private init() {}
     
-    var students: [String: [Grade]] = [:]
+    private var students: [String: [Grade]] = [:]
 
     func showMenu() {
         print(MessageString.shared.menuDescription)
