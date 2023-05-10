@@ -7,8 +7,10 @@
 
 import Foundation
 
-
-while(true) {
+func start() {
     MyCreditManager.shared.showMenu()
     MyCreditManager.shared.selectMenu()
+    start()
 }
+
+start()
