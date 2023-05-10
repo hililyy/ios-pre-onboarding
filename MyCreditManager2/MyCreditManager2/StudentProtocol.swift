@@ -7,11 +7,10 @@
 
 import Foundation
 
-protocol StudentProtocol {
-    func addStudent()
-    func deleteStudent()
-    func addGrade()
-    func deleteGrade()
-    func showScore()
-    func exit()
+protocol MenuProtocol {
+    func addStudent() throws
+    func deleteStudent() throws
+    func addGrade() throws
+    func deleteGrade() throws
+    func printScore() throws
 }

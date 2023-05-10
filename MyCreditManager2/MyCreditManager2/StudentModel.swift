@@ -9,5 +9,5 @@ import Foundation
 
 struct Grade {
     var subject: String
-    var grade: String
+    var score: Score
 }
