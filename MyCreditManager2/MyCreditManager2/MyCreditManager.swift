@@ -140,10 +140,13 @@ extension MyCreditManager: MenuProtocol {
             print("\(score.subject): \(score.score.description)")
         }
         
-        let average: Double = (students[name]?
-            .map { $0.score.score }
-            .reduce(0, +) ?? 0) / Double(scores.count)
-        
+        let average = calculateAverage(name: name, scores: scores)
         print(String(format: MessageString.shared.averageComplete, String(average)))
+    }
+    
+    func calculateAverage(name: String, scores: [Grade]) -> Double {
+        return (scores
+            .map { $0.score.score }
+            .reduce(0, +)) / Double(scores.count)
     }
 }
