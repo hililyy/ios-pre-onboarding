@@ -18,10 +18,9 @@ final class MyCreditManager {
         print(MessageString.shared.menuDescription)
     }
 
-    func selectMenu() {
+    func selectMenu() throws {
         guard let selectedNum = ProgramMenu(rawValue: readLine() ?? "") else {
-            print(MessageString.shared.wrongInputMenu)
-            return
+            throw ErrorCase.wrongInputMenu
         }
         do {
             switch selectedNum {
@@ -121,7 +120,7 @@ extension MyCreditManager: MenuProtocol {
             students[name]?.remove(at: index)
             print(String(format: MessageString.shared.deleteGradeComplete, name, subject))
         } else {
-            print(String(format: MessageString.shared.notExistGrade, name, subject))
+            throw ErrorCase.notExistGrade(name: name, subject: subject)
         }
     }
 

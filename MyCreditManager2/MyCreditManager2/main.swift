@@ -9,7 +9,9 @@ import Foundation
 
 func start() {
     MyCreditManager.shared.showMenu()
-    MyCreditManager.shared.selectMenu()
+    do {
+        try MyCreditManager.shared.selectMenu()
+    } catch { print(error) }
     start()
 }
 
